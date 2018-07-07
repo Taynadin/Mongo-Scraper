@@ -1,5 +1,6 @@
 # Mongo-Scraper
 An application build to scrape articles from 'The Verge".com
+User can read the latest articles and leave comments on what they read.  
 
 ## Overview
 ![screen shot 1](public/assets/img/screenshot1.png)
