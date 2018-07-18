@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "brace-expansion": "^1.1.11",
     "cheerio": "^0.22.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",

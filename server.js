@@ -21,16 +21,12 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 //connecting to MongoDB
-mongoose.connect('mongodb://heroku_jxkjhg1v:6s68tem51mlionrj2sneb7b53c@ds127988.mlab.com:27988/heroku_jxkjhg1v');
-
-mongoose.connect('mongodb://localhost/scraped_news');
-
-//********************************************************************************
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
-//********************************************************************************
-
+var databaseUri = "mongodb://localhost/scraped_news";
+if (process.env.MONGODB_URI){
+ mongoose.connect(process.env.MONGODB_URI);
+} else {
+ mongoose.connect(databaseUri);
+}
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
