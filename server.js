@@ -25,6 +25,12 @@ mongoose.connect('mongodb://heroku_jxkjhg1v:6s68tem51mlionrj2sneb7b53c@ds127988.
 
 //mongoose.connect('mongodb://localhost/scraped_news');
 
+//********************************************************************************
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
+//********************************************************************************
+
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
